@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root { /*define css variables*/
+    --maincolor: #f57266;
+}
+* {
+    font-family: "Quicksand", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s;
+    scroll-behavior: smooth;
+}
+*::selection { /*swap selection color (selection e.g. ctrl+a, holding right click)*/
+    background-color: var(--maincolor);
+    color: #fff;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem; /* = 16px*/
+}
+html::-webkit-scrollbar-track {
+    background-color: #555;
+}
+html::-webkit-scrollbar-thumb {
+    background-color: var(--maincolor);
+    border-radius: 1rem;
+}
+body {
+    background-color: #f5f5f5;
+}
+header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 0.1rem solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 2.5rem 7%;
+    z-index: 2;
+}
+header .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #555;
+}
+header img {
+    height: 2rem;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+nav ul li a {
+    font-size: 1.3rem;
+    color: #333;
+}
+nav ul li a:hover {
+    color: var(--maincolor);
+    border-bottom: .2rem solid var(--maincolor);
+    padding: 1rem 0;
+}
+section {
+    min-height: 50vh;
+    padding: 8rem 7% 3rem;
+}
+#sakums, #pakalpojumi .box-container, #izstrade, #ieguvumi, #prasmes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.image {
+    flex: 1 1 20rem;
+}
+.content {
+    flex: 1 1 30rem;
+}
+span {
+    color: var(--maincolor);
+    font-size: 2rem;
+}
+#sakums h1 {
+    color: #555;
+    font-size: 2.5rem;
+}
+#sakums img, #izstrade img, #ieguvumi img, #prasmes img{
+    width: 100%;
+}
+#sakums p{
+    color: #888;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+}
+.btn {
+    display: inline-block;
+    background-color: var(--maincolor);
+    color: #fff;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+}
+.btn:hover {
+    background-color: #333;
+}
+#pakalpojumi h2 {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 2rem;
+}
+#pakalpojumi .box {
+    background-color: #fff;
+    border: .1rem solid rgba(0,0,0,10%);
+    margin: 1rem;
+    padding: 2rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,10%); /*X Y blur color*/
+}
+#pakalpojumi .box:hover {
+    box-shadow: 0 0.5rem 1rem rgba(245, 114, 102, 30%);
+}
+#pakalpojumi .box:hover img {
+    transform: scale(1.2);
+}
+#pakalpojumi .box img {
+    width: 7rem;
+    height: 7rem;
+}
+#pakalpojumi .box h3 {
+    font-size: 1.4rem;
+    color: #666;
+    padding: 1rem 0;
+}
+#izstrade {
+    background-color: #222;
+}
+#izstrade h2, #ieguvumi h2 {
+    text-align: left;
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: #fff;
+}
+#izstrade ul li, #ieguvumi ul li{
+    color: #eee;
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
+}
+#ieguvumi {
+    background-color: #222;
+}
+#ieguvumi .content {
+    margin-left: 4rem;
+}
+#prasmes h2 {
+    text-align: left;
+    padding: 1rem 0;
+    font-size: 2rem;
+}
+#prasmes h3 {
+    text-align: center;
+    margin-top: 1rem;
+}
+#prasmes p {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+#prasmes .skillbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+#prasmes .skillboxitem {
+    text-align: center;
+    background-color: #fff;
+    border: .1rem solid rgba(0,0,0,10%);
+    margin: 1rem;
+    padding: 2rem;
+    max-width: 10rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,10%);
+}
+#prasmes .skillboxitem:hover {
+    box-shadow: 0 0.5rem 1rem rgba(245, 114, 102, 30%);
+}
+#prasmes .skillboxitem img {
+    width:  5rem;
+    height: 5rem;
+}
+#menu {
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    display: none;
+}
+#menu:hover {
+    color: var(--maincolor);
+}
+@media(max-width: 1470px) {
+    html {
+        font-size: 80%;
+    }
+}
+@media(max-width: 860px){
+    #menu {
+        display: block;
+    }
+    nav {
+        position: fixed;
+        right: -100%; /* hidden in the left side of the document (movement = <-)*/
+        width: 100%;
+        height: 100%;
+        top: 7.5rem;
+        background-color: #eee;
+        border-top: 0.2rem solid rgba(0,0,0,10%);
+    }
+    nav ul {
+        flex-flow: column;
+        padding: 2rem;
+    }
+    nav ul li {
+        width: 100%;
+        margin: 1rem 0;
+        text-align: center;
+    }
+    nav ul li a {
+        display: block;
+        background: #ddd;
+        padding: 1rem 0;
+        color: #333;
+        border-radius: 1rem;
+    }
+    nav ul li a:hover {
+       background-color: var(--maincolor);
+       color: #fff;
+       border: none;
+    }
+    .nav-toggle {
+        right: 0;
+    }
+}
+@media(max-width: 756px){
+    #ieguvumi {
+        flex-direction: column-reverse;
+    }
+    #ieguvumi .content {
+        margin: 0;
+    }
+    #izstrade, #ieguvumi {
+        padding: 3rem 7% 0;
+    }
+   .content {
+        flex: auto;
+   }
+   #sakums .content {
+        text-align: center;
+   }
+}
